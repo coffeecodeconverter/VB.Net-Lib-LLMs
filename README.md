@@ -35,15 +35,18 @@ The main function defaults to streaming the response asynchronously. You will ne
 
 ```vb
 Await AskAI()
+```vb
 
 ## Bare Minimum Example
 ```vb
 Await AskAI(userInput, callBackFunc:=AddressOf MyCallBackFunction)
+```vb
 
 
 ## Using All Parameters Example
 ```vb
 Await AskAI(userInput, systemPrompt, maxTokens, temperature, topP, modelName, imageData, endpoint, apiKey, streamResponse, AddressOf MyCallBackFunction)
+```vb
 
 
 ## Example Callback function
@@ -57,7 +60,7 @@ Public Sub MyCallBackFunction(text As String)
         TextBox_AIResponse.ScrollToCaret()
     End If
 End Sub
-
+```vb
 
 
 
