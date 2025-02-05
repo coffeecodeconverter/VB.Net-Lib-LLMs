@@ -31,26 +31,21 @@ By default, the module is set to use LM Studio as the preferred method. However,
 ### Note:
 The main function defaults to streaming the response asynchronously. You will need to create your own callback function to update UI elements, such as a textbox, with the captured responses.
 
+
 ## Main Function
 
 ```vb
 Await AskAI()
-```vb
 
 ## Bare Minimum Example
-```vb
 Await AskAI(userInput, callBackFunc:=AddressOf MyCallBackFunction)
-```vb
 
 
 ## Using All Parameters Example
-```vb
 Await AskAI(userInput, systemPrompt, maxTokens, temperature, topP, modelName, imageData, endpoint, apiKey, streamResponse, AddressOf MyCallBackFunction)
-```vb
 
 
 ## Example Callback function
-```vb
 Public Sub MyCallBackFunction(text As String)
     If TextBox_AIResponse.InvokeRequired Then
         TextBox_AIResponse.Invoke(New Action(Of String)(AddressOf MyCallBackFunction), text)
@@ -60,7 +55,6 @@ Public Sub MyCallBackFunction(text As String)
         TextBox_AIResponse.ScrollToCaret()
     End If
 End Sub
-```vb
 
 
 
